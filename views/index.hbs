@@ -1,0 +1,101 @@
+<div class="container">
+	<h1>Node + Express + Mongo</h1>
+	<h2>Employee info</h2>
+	<div class="row row-eq-height">
+		<div class="col-xs-3 orange commonBorder">
+			<h3 class="bottomBorder">Insert</h3>
+			{{# if errors }}
+				{{# each errors}}
+					{{this.msg}}
+				{{/each}}				
+			{{/if}}
+		<form action="/insert" method="post">						
+			<div class="form-group">
+				<label for="empName">Name: </label>
+				<input type="text" class="form-control" id="empName" name="empName" placeholder="Enter name" required>		
+			</div>
+			<div class="form-group">
+				<label for="designation">Designation:</label>
+				<input type="text" class="form-control" id="designation" name="designation" placeholder="Enter designation" required>
+			</div>
+			<div class="form-group">			
+				<label for="company">Company</label>
+				<input type="text" class="form-control" id="company" name="company" placeholder="Enter company name" required>
+			</div>
+			<div class="form-group">
+				<label for="emailID">Email</label>
+				<input type="text" class="form-control" id="emailID" name="emailID" placeholder="Enter emailID" required>
+			</div>
+			<div class="form-group">
+				<label for="loc">Location</label>
+				<input type="text" class="form-control" id="loc" name="loc" placeholder="Enter office location" required>
+			</div>
+			<button type="submit" class="btn btn-default">Insert</button>		
+		</form>
+		</div> <!-- col-xs-3 class -->		
+		
+		<div class="col-xs-3 blue commonBorder">
+			<h3 class="bottomBorder">Read</h3>
+		<form action="/read" method="get">									
+			<button type="submit" class="btn btn-default">Read</button>		
+		</form>		
+		{{# if empData}}
+		
+			{{# each empData}}
+			<div class="commonBorder">
+				ID: {{this._id}}<br>
+				Name: {{this.empName}}<br>
+				Designation: {{this.designation}}<br>
+				Company: {{this.company}}<br>
+				EmailID: {{this.emailID}}<br>
+				Location: {{this.loc}}<br>
+			</div>
+			{{/each}}
+		
+		{{/if}}
+		</div> <!-- col-xs-3 class -->
+		
+		<div class="col-xs-3 green commonBorder">
+			<h3 class="bottomBorder">Update</h3>
+		<form action="/update" method="post">						
+			<div class="form-group">
+				<label for="userID">UserID: </label>
+				<input type="text" class="form-control" id="userID" name="userID" placeholder="Enter ID" required>		
+			</div>
+			<div class="form-group">
+				<label for="empName">Name: </label>
+				<input type="text" class="form-control" id="empName" name="empName" placeholder="Enter name" required>		
+			</div>
+			<div class="form-group">
+				<label for="designation">Designation:</label>
+				<input type="text" class="form-control" id="designation" name="designation" placeholder="Enter designation" required>
+			</div>
+			<div class="form-group">			
+				<label for="company">Company</label>
+				<input type="text" class="form-control" id="company" name="company" placeholder="Enter company name" required>
+			</div>
+			<div class="form-group">
+				<label for="emailID">Email</label>
+				<input type="text" class="form-control" id="emailID" name="emailID" placeholder="Enter emailID" required>
+			</div>
+			<div class="form-group">
+				<label for="loc">Location</label>
+				<input type="text" class="form-control" id="loc" name="loc" placeholder="Enter office location" required>
+			</div>
+			<button type="submit" class="btn btn-default">Update</button>		
+		</form>
+		</div> <!-- col-xs-3 class -->
+		
+		<div class="col-xs-3 red commonBorder">
+			<h3 class="bottomBorder">Delete</h3>
+		<form action="/delete" method="post">						
+			<div class="form-group">
+				<label for="userID">UserID: </label>
+				<input type="text" class="form-control" id="userID" name="userID" placeholder="Enter ID" required>
+			</div>
+			<button type="submit" class="btn btn-default">Delete</button>		
+		</form>
+		</div> <!-- col-xs-3 class -->
+	
+	</div><!-- Row class -->
+	</div> <!-- Container class -->

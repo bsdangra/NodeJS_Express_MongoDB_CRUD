@@ -1,0 +1,30 @@
+.commonBorder{
+	border: solid black 2px;
+	padding:10px;
+	margin:10px;	
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
+.orange{
+	background-color:#ff8c1a;	
+}
+.blue{
+	background-color:#33bbff;	
+}
+.green{
+	background-color:#33ff33;	
+}
+.red{
+	background-color:#ff3333;	
+}
+
+
+.bottomBorder{
+	border-bottom: solid black 2px;
+}
